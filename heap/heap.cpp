@@ -49,6 +49,16 @@ void printheap(int *arr, int n) {
         cout << arr[i] << " ";
     cout << endl;
 }
+void heapsort(int* arr, int n) {
+    int cap = n;
+    while(n > 0) {
+        swap(arr, 0, n-1);
+        heapify(arr, n-1, 0);
+        n = n-1;
+    }  
+    n = cap;
+    printheap(arr, n);
+}
 int main()
 {
     int n;
@@ -65,15 +75,18 @@ int main()
     buildheap(arr, n);
     printheap(arr, n);
     
-    cout << "Extracted maximum element of heap: " << extract(arr, n) << endl;
-    cout << "New maxheap is: " << endl;
-    printheap(arr, n);
+    // cout << "Extracted maximum element of heap: " << extract(arr, n) << endl;
+    // cout << "New maxheap is: " << endl;
+    // printheap(arr, n);
     
-    int ele;
-    cout << "Enter the element to be inserted in heap: ";
-    cin >> ele;
-    insert(arr, n, ele);
-    cout << "New maxheap after adding " << ele <<" is :" << endl;
-    printheap(arr, n);
+    // int ele;
+    // cout << "Enter the element to be inserted in heap: ";
+    // cin >> ele;
+    // insert(arr, n, ele);
+    // cout << "New maxheap after adding " << ele <<" is :" << endl;
+    // printheap(arr, n);
+     
+    cout << "after applying heap sort: " << endl;
+    heapsort(arr, n);
     return 0;
 }
