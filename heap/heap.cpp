@@ -88,5 +88,6 @@ int main()
      
     cout << "after applying heap sort: " << endl;
     heapsort(arr, n);
+    delete [] arr;// de-allocate the dynamically created memory.
     return 0;
 }
